@@ -1,0 +1,23 @@
+Describe your tournament design here. Please don't write more than 250 words.
+
+Each match in the tournament features 15 opportunities for either Team 1 or Team 2 to score, determined randomly.
+
+To assess the likelihood of a shot on goal, various player statistics are aggregated:
+
+Midfielder: getFitness, getPassingAccuracy, getPositioning, getDribbling, getChanceCreation
+Forward: getFitness, getPositioning, getDribbling, getChanceCreation, ShotAccuracy, ShotFrequency
+Manager: getAbility, getRespect, getBelief, getKnowledge
+Despite obtaining a shot on goal, there remains a chance of interception or save by the defense or goalkeeper. The probability of such events is influenced by the following factors:
+
+Goal-Keeper: getFitness, getPassingAccuracy, getPositioning
+Defender: getFitness, getPassingAccuracy, getDefensiveness, getDribbling
+Manager: getAbility, getRespect, getBelief, getKnowledge
+In the group stage, draws are allowed. However, beyond this stage, a winner must be determined. If the score is tied, penalty shoot-outs and sudden death follow, with the order of shooters being Forwards, Midfielders, Defenders, and Goal-Keeper.
+
+Player penalty probabilities are determined by factors such as getFitness, getShotAccuracy, getShotFrequency, and positioning, with position-specific bonuses:
+
+Forward: 25
+Midfielders: 10
+Defenders: 0
+Goal-Keeper: 5
+Goalkeeper saving penalty probabilities depend on factors like getFitness, getOffSideAdherence, and positioning, multiplied by 10. These stages mirror those observed in the World Cup.
